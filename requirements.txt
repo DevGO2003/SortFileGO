@@ -1,0 +1,6 @@
+# File Sorter - Dependencies
+# Chỉ cần Python 3.7+ với Tkinter (đã có sẵn)
+# Không cần cài thêm package nào
+
+# Nếu muốn đóng gói thành .exe:
+pyinstaller>=5.0
