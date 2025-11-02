@@ -139,3 +139,147 @@ MIT License - Xem file LICENSE để biết thêm chi tiết
 - **GitHub**: https://github.com/DevGO2003/SortFileGO
 - **Company**: DevGO2003
 - **Version**: 1.0.0
+
+---
+
+# 📁 File Sorter - Automatic File Sorting Application
+
+![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
+![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
+## 📖 Introduction
+
+**File Sorter** is a Windows application that helps you **automatically organize and sort files** in folders quickly and efficiently. Instead of manually moving files to separate folders, the application automatically categorizes all files by their extension (.jpg, .pdf, .mp3, .docx, etc.) with just one click.
+
+### 🎯 Use Cases
+
+- ✅ **Clean up Downloads folder** - Automatically sort hundreds of downloaded files by type
+- 📂 **Manage project folders** - Organize code files, images, and documents neatly
+- 🔄 **Batch sorting** - Handle subfolders with recursive functionality
+- 💾 **Organized backups** - Automatically categorize backup files by format
+- 🚀 **Save time** - Replace hours of manual file moving with one click
+
+### ✨ Key Features
+
+- 🖥️ **User-friendly GUI** - Easy to use, no command line needed
+- 📊 **Real-time progress display** - Track processing with progress bar
+- 📝 **Detailed logging** - Record all operations for easy verification
+- 🔀 **Smart duplicate handling** - Automatically rename files (1), (2), (3)...
+- ⚡ **Multi-threaded processing** - UI stays responsive while processing
+- 🎛️ **Flexible customization** - Choose recursive scan, logging, etc.
+
+## 🎯 How It Works
+
+```
+D:\Downloads\
+├── photo1.jpg
+├── photo2.jpg
+├── document.pdf
+├── song.mp3
+└── video.mp4
+
+    ↓ After sorting ↓
+
+D:\Downloads\
+├── .jpg\
+│   ├── photo1.jpg
+│   └── photo2.jpg
+├── .pdf\
+│   └── document.pdf
+├── .mp3\
+│   └── song.mp3
+└── .mp4\
+    └── video.mp4
+```
+
+- Files **without extension** → Go to `._no_ext\` folder
+- **Duplicate names** → Automatically renamed to `file (1).jpg`, `file (2).jpg`
+
+---
+
+## 🛠️ Technologies Used
+
+The application is built with the following technologies and libraries:
+
+### Programming Language
+- **Python 3.7+** - Main programming language, easy to learn and powerful
+
+### Libraries & Framework
+- **Tkinter** - Built-in Python GUI library for creating graphical interface
+- **os / shutil** - Standard Python libraries for file and folder operations
+- **threading** - Multi-threading library for non-blocking processing
+- **pathlib** - Modern file path handling library
+
+### Packaging Tool
+- **PyInstaller** - Tool to convert Python scripts into standalone .exe files
+
+### Advantages of This Tech Stack
+- ✅ **No complex setup** - Python and libraries are free
+- ✅ **Cross-platform** - Can run on Windows, Linux, macOS
+- ✅ **Lightweight and fast** - No need for heavy frameworks like Electron
+- ✅ **Easy to maintain** - Python code is readable and easy to modify
+
+---
+
+## 🚀 Quick Start (EXE File)
+
+### ⚡ Using Pre-built .exe (Recommended)
+
+**Step 1:** Download `FileSorter.exe` from the `dist/` folder or from [Releases](https://github.com/DevGO2003/SortFileGO/releases)
+
+**Step 2:** Double-click `FileSorter.exe` to open the application
+
+**Step 3:** Use the interface:
+1. Click **"🔍 Select Folder"** → Choose the folder to sort
+2. Options:
+   - ✅ **Recursive**: Enable to scan subfolders
+   - ✅ **Create Log**: Enable to create detailed log file
+3. Click **"▶️ Start Sorting"**
+4. Wait for progress bar to complete
+5. Check results in the selected folder
+
+**Important Notes:**
+- ⚠️ .exe file **doesn't require Python** or any libraries
+- ⚠️ Can run directly on any Windows machine (Windows 7+)
+- ⚠️ If Windows Defender warns, click "Run anyway" (file is 100% safe)
+
+### 📦 Build Your Own .exe (For Developers)
+
+If you want to build .exe from source code:
+
+```bash
+# 1. Install PyInstaller
+pip install pyinstaller
+
+# 2. Create .exe file
+pyinstaller --onefile --noconsole --name "FileSorter" file_sorter.py
+
+# 3. .exe will be in dist/ folder
+# dist/FileSorter.exe
+```
+
+---
+
+## 📞 Support & Contact
+
+If you encounter issues or need support:
+- 📧 **Email**: DevGO2003@gmail.com
+- 🐛 **Report Bug**: Create an [Issue](https://github.com/DevGO2003/SortFileGO/issues) on GitHub
+- 💬 **Suggestions**: Create a [Discussion](https://github.com/DevGO2003/SortFileGO/discussions)
+
+## 📄 License
+
+MIT License - See LICENSE file for details
+
+---
+
+**Made with ❤️ by thaiGO - DevGO2003 Company**
+
+*This project was created to help users organize and manage files easily, replacing traditional manual tools.*
+
+## 🔗 More Information
+
+- **GitHub**: https://github.com/DevGO2003/SortFileGO
+- **Company**: DevGO2003
+- **Version**: 1.0.0
