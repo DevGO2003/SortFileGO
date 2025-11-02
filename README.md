@@ -1,71 +1,29 @@
-# 📁 File Sorter - Ứng dụng sắp xếp file theo extension
-
-Ứng dụng Windows có giao diện đồ họa để tự động sắp xếp file theo phần mở rộng (.jpg, .pdf, .mp3, v.v.)
+# 📁 File Sorter - Ứng dụng sắp xếp file tự động
 
 ![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-## ✨ Tính năng
+## 📖 Giới thiệu
 
-- ✅ **Giao diện đồ họa đẹp mắt** - Dễ sử dụng với Tkinter
-- 📂 **Chọn thư mục tùy ý** - Không bị giới hạn ở ổ D:\
-- 🔄 **Hỗ trợ recursive** - Quét toàn bộ thư mục con
-- 📊 **Hiển thị tiến trình** - Progress bar realtime
-- 📝 **Tạo file log** - Ghi lại tất cả thao tác
-- 🔀 **Xử lý trùng tên** - Tự động đánh số file (1), (2), (3)...
-- 🚀 **Chạy multi-thread** - Không làm đơ giao diện
-- 🔒 **Hỗ trợ quyền admin** - Có thể bật nếu cần
+**File Sorter** là ứng dụng Windows giúp bạn **tự động sắp xếp và tổ chức các file** trong thư mục một cách nhanh chóng và hiệu quả. Thay vì phải thủ công di chuyển từng file vào các thư mục riêng, ứng dụng sẽ tự động phân loại tất cả các file theo phần mở rộng (.jpg, .pdf, .mp3, .docx, v.v.) chỉ với một cú click chuột.
 
-## 📋 Yêu cầu
+### 🎯 Công dụng
 
-- Python 3.7 trở lên
-- Tkinter (có sẵn trong Python)
-- Windows (có thể chạy trên Linux/Mac nhưng chưa test kỹ)
+- ✅ **Dọn dẹp thư mục Downloads** - Tự động sắp xếp hàng trăm file tải về theo loại
+- 📂 **Quản lý thư mục dự án** - Phân loại file code, hình ảnh, tài liệu một cách ngăn nắp
+- 🔄 **Sắp xếp hàng loạt** - Xử lý cả thư mục con với chức năng recursive
+- 💾 **Sao lưu có tổ chức** - Tự động phân loại file backup theo định dạng
+- 🚀 **Tiết kiệm thời gian** - Thay thế việc di chuyển file thủ công hàng giờ đồng hồ
 
-## 🚀 Cách sử dụng
+### ✨ Tính năng nổi bật
 
-### Phương án 1: Chạy trực tiếp (khuyến nghị cho dev)
-
-1. **Cài Python** (nếu chưa có):
-   - Tải tại: https://www.python.org/downloads/
-   - ✅ Nhớ tick "Add Python to PATH"
-
-2. **Chạy ứng dụng**:
-   ```bash
-   python file_sorter.py
-   ```
-
-3. **Sử dụng**:
-   - Click "🔍 Chọn thư mục" → Chọn thư mục cần sắp xếp
-   - Chọn options (recursive, create log)
-   - Click "▶️ Bắt đầu sắp xếp"
-   - Xem tiến trình và log
-
-### Phương án 2: Đóng gói thành file .exe (dễ chia sẻ)
-
-1. **Cài PyInstaller**:
-   ```bash
-   pip install pyinstaller
-   ```
-
-2. **Tạo file .exe**:
-   ```bash
-   pyinstaller --onefile --noconsole --name "FileSorter" --icon=icon.ico file_sorter.py
-   ```
-
-   Hoặc dùng lệnh đơn giản hơn:
-   ```bash
-   pyinstaller --onefile --noconsole file_sorter.py
-   ```
-
-3. **File .exe** sẽ ở trong thư mục `dist/`:
-   ```
-   dist/
-   └── FileSorter.exe  ← Click đúp để chạy
-   ```
-
-4. **Chia sẻ**: Copy file `FileSorter.exe` cho bất kỳ ai, không cần cài Python!
+- 🖥️ **Giao diện đồ họa thân thiện** - Dễ sử dụng, không cần dòng lệnh
+- 📊 **Hiển thị tiến trình realtime** - Theo dõi quá trình xử lý với progress bar
+- 📝 **Tạo file log chi tiết** - Ghi lại tất cả thao tác để dễ dàng kiểm tra
+- 🔀 **Xử lý trùng tên thông minh** - Tự động đánh số file (1), (2), (3)...
+- ⚡ **Xử lý đa luồng** - Giao diện không bị lag khi xử lý nhiều file
+- 🎛️ **Tùy chỉnh linh hoạt** - Chọn quét thư mục con, tạo log, v.v.
 
 ## 🎯 Cách hoạt động
 
@@ -94,142 +52,90 @@ D:\Downloads\
 - File **không có đuôi** → Vào thư mục `._no_ext\`
 - File **trùng tên** → Tự động đổi thành `file (1).jpg`, `file (2).jpg`
 
-## ⚙️ Các tùy chọn
+---
 
-### 1. Recursive (Quét thư mục con)
-- ✅ **Bật**: Sắp xếp tất cả file trong thư mục và thư mục con
-- ❌ **Tắt**: Chỉ sắp xếp file ở thư mục gốc
+## 🛠️ Công nghệ sử dụng
 
-### 2. Create Log (Tạo file log)
-- ✅ **Bật**: Tạo file `sort_log.txt` ghi lại tất cả thao tác
-- ❌ **Tắt**: Không lưu log
+Ứng dụng được xây dựng với các công nghệ và thư viện sau:
 
-### 3. Quyền Admin (tùy chọn)
-Nếu cần di chuyển file hệ thống hoặc file đang bị lock, bạn có thể:
+### Ngôn ngữ lập trình
+- **Python 3.7+** - Ngôn ngữ lập trình chính, dễ học và mạnh mẽ
 
-**Cách 1**: Chạy Command Prompt as Administrator → chạy script
+### Thư viện & Framework
+- **Tkinter** - Thư viện GUI có sẵn trong Python để tạo giao diện đồ họa
+- **os / shutil** - Thư viện chuẩn Python để xử lý file và thư mục
+- **threading** - Thư viện đa luồng để xử lý không làm đơ giao diện
+- **pathlib** - Thư viện xử lý đường dẫn file hiện đại
 
-**Cách 2**: Uncomment dòng này trong `file_sorter.py`:
-```python
-def main():
-    run_as_admin()  # ← Bỏ comment dòng này
-    ...
-```
+### Công cụ đóng gói
+- **PyInstaller** - Công cụ chuyển đổi script Python thành file .exe độc lập
 
-## 🛠️ Sửa đổi & Tuỳ biến
+### Ưu điểm của stack công nghệ này
+- ✅ **Không cần cài đặt phức tạp** - Python và các thư viện đều miễn phí
+- ✅ **Cross-platform** - Có thể chạy trên Windows, Linux, macOS
+- ✅ **Nhẹ và nhanh** - Không cần framework nặng như Electron
+- ✅ **Dễ bảo trì** - Code Python dễ đọc và dễ sửa đổi
 
-### Thay đổi quy tắc sắp xếp
-Hiện tại app sắp xếp theo **extension**. Nếu muốn sắp xếp theo loại file:
+---
 
-```python
-# Thêm mapping vào đầu hàm sort_files()
-CATEGORY_MAP = {
-    'jpg': 'Images',
-    'png': 'Images',
-    'pdf': 'Documents',
-    'docx': 'Documents',
-    'mp3': 'Music',
-    'mp4': 'Videos',
-}
+## 🚀 Cách sử dụng nhanh (File EXE)
 
-# Thay dòng này:
-target_folder = os.path.join(source_folder, f".{ext}")
+### ⚡ Dùng file .exe có sẵn (Khuyến nghị)
 
-# Thành:
-category = CATEGORY_MAP.get(ext.lower(), f".{ext}")
-target_folder = os.path.join(source_folder, category)
-```
+**Bước 1:** Tải file `FileSorter.exe` từ thư mục `dist/` hoặc từ [Releases](https://github.com/DevGO2003/SortFileGO/releases)
 
-### Thêm whitelist/blacklist extension
-```python
-# Chỉ sắp xếp ảnh
-ALLOWED_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'bmp']
-if ext.lower() not in ALLOWED_EXTENSIONS:
-    continue
+**Bước 2:** Double-click vào file `FileSorter.exe` để mở ứng dụng
 
-# Bỏ qua file hệ thống
-IGNORED_EXTENSIONS = ['sys', 'dll', 'exe']
-if ext.lower() in IGNORED_EXTENSIONS:
-    continue
-```
+**Bước 3:** Sử dụng giao diện:
+1. Click nút **"🔍 Chọn thư mục"** → Chọn thư mục cần sắp xếp
+2. Tùy chọn:
+   - ✅ **Recursive**: Bật để quét cả thư mục con
+   - ✅ **Create Log**: Bật để tạo file log chi tiết
+3. Click nút **"▶️ Bắt đầu sắp xếp"**
+4. Đợi progress bar hoàn tất
+5. Xem kết quả trong thư mục đã chọn
 
-## 📦 Cấu trúc project
+**Lưu ý quan trọng:**
+- ⚠️ File .exe **không cần cài đặt Python** hay bất kỳ thư viện nào
+- ⚠️ Có thể chạy trực tiếp trên bất kỳ máy Windows nào (Windows 7+)
+- ⚠️ Nếu Windows Defender cảnh báo, chọn "Run anyway" (file an toàn 100%)
 
-```
-SortFileGO/
-├── file_sorter.py      # File chính
-├── requirements.txt    # Dependencies
-├── README.md          # Tài liệu này
-└── icon.ico           # Icon (tùy chọn, cho PyInstaller)
-```
+### 📦 Tự tạo file .exe (Cho developer)
 
-## 🐛 Xử lý lỗi thường gặp
+Nếu bạn muốn tự build file .exe từ source code:
 
-### 1. "No module named 'tkinter'"
-**Nguyên nhân**: Python không có Tkinter
-
-**Giải pháp**:
 ```bash
-# Ubuntu/Debian
-sudo apt-get install python3-tk
+# 1. Cài PyInstaller
+pip install pyinstaller
 
-# Fedora
-sudo dnf install python3-tkinter
+# 2. Tạo file .exe
+pyinstaller --onefile --noconsole --name "FileSorter" file_sorter.py
 
-# Windows: Cài lại Python và tick "tcl/tk and IDLE"
+# 3. File .exe sẽ nằm trong thư mục dist/
+# dist/FileSorter.exe
 ```
 
-### 2. File .exe quá nặng (>30MB)
-**Nguyên nhân**: PyInstaller đóng gói toàn bộ Python runtime
+---
 
-**Giải pháp**:
-```bash
-# Dùng UPX để nén (giảm ~50% dung lượng)
-pyinstaller --onefile --noconsole --upx-dir=C:\upx file_sorter.py
-```
+## 📞 Hỗ trợ & Liên hệ
 
-### 3. Không di chuyển được file
-**Nguyên nhân**: 
-- File đang mở bởi chương trình khác
-- Không đủ quyền truy cập
-
-**Giải pháp**: 
-- Đóng tất cả file đang mở
-- Chạy với quyền admin (xem phần "Quyền Admin")
-
-## 📝 Changelog
-
-### v1.0 (2025-01-02)
-- ✅ Tạo giao diện đầu tiên với Tkinter
-- ✅ Chức năng di chuyển file theo extension
-- ✅ Progress bar và log realtime
-- ✅ Xử lý trùng tên file
-- ✅ Hỗ trợ recursive và tạo log file
-
-## 🤝 Đóng góp
-
-Nếu bạn muốn đóng góp hoặc báo lỗi:
-1. Fork repo này
-2. Tạo branch mới: `git checkout -b feature/amazing-feature`
-3. Commit: `git commit -m 'Add amazing feature'`
-4. Push: `git push origin feature/amazing-feature`
-5. Tạo Pull Request
+Nếu gặp vấn đề hoặc cần hỗ trợ:
+- 📧 **Email**: DevGO2003@gmail.com
+- 🐛 **Báo lỗi**: Tạo [Issue](https://github.com/DevGO2003/SortFileGO/issues) trên GitHub
+- 💬 **Góp ý**: Tạo [Discussion](https://github.com/DevGO2003/SortFileGO/discussions)
 
 ## 📄 License
 
 MIT License - Xem file LICENSE để biết thêm chi tiết
 
-## 🙋 Hỗ trợ
-
-Nếu gặp vấn đề, hãy tạo issue trên GitHub hoặc liên hệ trực tiếp.
-
 ---
 
 **Made with ❤️ by thaiGO - DevGO2003 Company**
 
-*Dự án này được tạo ra để thay thế batch script cũ và cung cấp trải nghiệm tốt hơn với giao diện đồ họa.*
+*Dự án được tạo ra để giúp người dùng sắp xếp và quản lý file một cách dễ dàng, thay thế các công cụ thủ công truyền thống.*
 
-## 🔗 Links
+## 🔗 Thông tin thêm
 
 - **GitHub**: https://github.com/DevGO2003/SortFileGO
 - **Company**: DevGO2003
+- **Version**: 1.0.0
